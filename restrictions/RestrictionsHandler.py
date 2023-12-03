@@ -20,3 +20,15 @@ def at_least_in_one_slot(cx, slots):
 
         return formula
 
+def max_in_one_slot(cx, slots):
+    if slots > 0:
+        for x in range(1, slots + 1):
+            for y in range(x + 1, slots + 1):
+                not_in_two_slots = Not(And(Bool(f"x_{cx}_{x}"), Bool(f"x_{cx}_{y}")))
+
+                if x == 1 and y == 2:
+                    formula = not_in_two_slots
+                else:
+                    formula = And(formula, Not(And(Bool(f"x_{cx}_{x}"), Bool(f"x_{cx}_{y}"))))
+
+        return formula
