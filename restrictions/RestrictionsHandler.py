@@ -10,3 +10,13 @@ def turn_common_inscriptions_pair_minicourses_to_propositional_logic(cx, cy, slo
 
         return formula
 
+def at_least_in_one_slot(cx, slots):
+    if slots > 0:
+        firstCourseInFirstSlot = Bool(f"x_{cx}_1")
+        formula = firstCourseInFirstSlot
+
+        for slot in range(2, slots + 1):
+            formula = Or(formula, Bool(f"x_{cx}_{slot}"))
+
+        return formula
+
