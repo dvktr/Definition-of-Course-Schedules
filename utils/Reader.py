@@ -38,3 +38,15 @@ def getPairs(archive_name):
    
     return courses 
 
+def getSlots(archive_name):
+    lines = openArchive(archive_name)
+        
+    for line in lines:
+        if line.startswith('# Minicursos'):
+            continue
+        
+        if 'Slots' in line:
+            num = line.split()
+            slot = int(num[2])
+
+    return slot
