@@ -21,3 +21,20 @@ def getCourses(archive_name):
         minicourses[x + 1] = courses[x]
 
     return minicourses
+
+def getPairs(archive_name):
+    lines = openArchive(archive_name)
+
+    courses = []
+    
+    found_pairs = False
+
+    for line in lines:
+        if found_pairs:
+            minicourse1, minicourse2 = line.split(' ')[:2]
+            courses.append((int(minicourse1), int(minicourse2)))
+        elif line.startswith('# Pares de minicursos com inscriÃ§Ãµes em comum:'):
+            found_pairs = True
+   
+    return courses 
+
