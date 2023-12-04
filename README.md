@@ -1,4 +1,4 @@
-# README - Organizador de Cursos
+Organizador de Cursos
 
 ## Introdução
 
