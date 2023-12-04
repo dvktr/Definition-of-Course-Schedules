@@ -1,0 +1,15 @@
+# Minicursos:
+1 Javascript
+2 Python
+3 Ruby 
+4 Flutter  
+5 SQL
+6 React Native
+# Slots: 2
+# Pares de minicursos com inscrições em comum:
+1 2
+2 3
+2 5
+3 4
+3 6
+5 6
